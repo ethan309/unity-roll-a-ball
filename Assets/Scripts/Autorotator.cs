@@ -8,7 +8,7 @@ public class Autorotator : MonoBehaviour
     void Update()
     {
         // Rotate
-        Vector3 incrementalRotation = new Vector3(15, 45, 30);
-        transform.Rotate(incrementalRotation * Time.deltaTime);
+        Vector3 incrementalRotation = new Vector3(0, 90, 0);
+        transform.Rotate(incrementalRotation * Time.deltaTime, Space.World);
     }
 }

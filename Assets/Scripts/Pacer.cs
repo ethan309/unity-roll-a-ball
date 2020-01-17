@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class Pacer : MonoBehaviour
 {
-    public float speed = 5.0F;
-    private float zMax = 7.5F;
-    private float zMin = -7.5F;
-    private int direction = 1;
+    private float speed = 5.0F;
+    private Vector3 center = new Vector3(0F, 0F, 0F);
 
     // Update is called once per frame
     void Update()
     {
-        float zNew = transform.position.z + direction * speed * Time.deltaTime;
-        if(zNew >= zMax)
-        {
-            zNew = zMax;
-            direction *= -1;
-        } else if(zNew <= zMin) {
-            zNew = zMin;
-            direction *= -1;
-        }
-        transform.position = new Vector3(7.5F, 0.75F, zNew);
+        transform.RotateAround(center, Vector3.up, 30 * Time.deltaTime);
     }
 }

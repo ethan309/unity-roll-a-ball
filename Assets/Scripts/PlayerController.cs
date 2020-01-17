@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public float movementSpeed;
 
+    public int winningScore;
     private int score;
     public Text scoreDisplayText;
 
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         score = newScore;
         scoreDisplayText.text = "Score: " + score.ToString();
-        if(score >= 500)
+        if(score >= winningScore)
         {
             endgameMessage.text = "Game Over";
             movementSpeed = 0;
