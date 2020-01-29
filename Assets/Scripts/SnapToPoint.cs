@@ -39,13 +39,17 @@ namespace Valve.VR.InteractionSystem.Sample
 
             if (used)
             {
-                print('1');
                 body.isKinematic = false;
                 dropTimer = -1;
             }
+            else if(transform.position == snapTo && transform.rotation == snapAngle)
+            {
+                body.velocity = Vector3.zero;
+                body.angularVelocity = Vector3.zero;
+                shouldReset = false;
+            }
             else if (shouldReset)
             {
-                print('2');
                 dropTimer += Time.deltaTime / (snapTime / 2);
 
                 body.isKinematic = dropTimer > 1;
