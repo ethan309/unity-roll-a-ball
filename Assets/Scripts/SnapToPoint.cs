@@ -37,15 +37,10 @@ namespace Valve.VR.InteractionSystem.Sample
             if (interactable != null)
                 used = interactable.attachedToHand;
 
-            if (used)
+            if (used || transform.position == snapTo && transform.rotation == snapAngle)
             {
                 body.isKinematic = false;
                 dropTimer = -1;
-            }
-            else if(transform.position == snapTo && transform.rotation == snapAngle)
-            {
-                body.velocity = Vector3.zero;
-                body.angularVelocity = Vector3.zero;
                 shouldReset = false;
             }
             else if (shouldReset)
@@ -61,6 +56,7 @@ namespace Valve.VR.InteractionSystem.Sample
                     transform.position = snapTo;
                     transform.rotation = snapAngle;
                     shouldReset = false;
+                    dropTimer = -1;
                 }
                 // Still returning to target position
                 else
