@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 262617983}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1247,7 +1247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8ad89fee2124ef098f818f9dac4fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldReset: 0
 --- !u!54 &557902998
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1272,7 +1271,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557902996}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
